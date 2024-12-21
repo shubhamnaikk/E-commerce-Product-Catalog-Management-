@@ -1,0 +1,20 @@
+version: 2
+
+sources:
+  - name: product_catalog
+    database: DEV_PRODUCT_CATALOG  # Use the cloned database name
+    schema: public                 # Schema name where source table resides
+    tables:
+      - name: source_product_table
+        description: "The original product table in the DEV_PRODUCT_CATALOG database"
+
+models:
+  - name: stg_product_with_rating
+    description: "Table with product information and new product rating feature"
+    columns:
+      - name: product_id
+        description: "Unique identifier for each product"
+      - name: title
+        description: "Title of the product"
+      - name: product_rating
+        description: "Calculated rating based on review score"

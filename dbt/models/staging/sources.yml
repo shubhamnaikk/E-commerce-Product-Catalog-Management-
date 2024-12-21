@@ -1,0 +1,7 @@
+sources:
+  - name: home_depot_source
+    database: dbt_db
+    schema: dbt_schema
+    tables:
+      - name: raw_data
+        identifier: home_depot_data_1_2021_12

@@ -1,0 +1,17 @@
+version: 2
+models:
+  - name: dim_product
+    columns:
+      - name: product_id
+        tests:
+          - not_null
+      - name: effective_date
+        tests:
+          - not_null
+      - name: current_flag
+        tests:
+          - accepted_values:
+              values: [0, 1]
+          - unique_combination_of_columns:
+              - product_id
+              - effective_date
